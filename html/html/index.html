@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hashem's Portfolio</title>
+
+    <!-- تنسيقات الـ CSS الكاملة والمنسقة -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 15px;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+            color: white; 
+        }
+
+        img, video {
+            max-width: 100%;   
+            height: auto;      
+            display: block;
+            margin: 10px auto; 
+            border-radius: 8px; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.03); 
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); 
+        }
+
+        .bg-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1; 
+            object-fit: cover; 
+        }
+
+        .content {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        a {
+            color: #ff4d4d;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        
+        a:hover {
+            color: white;
+            text-decoration: underline;
+            font-size: 1.1em;
+            text-shadow: 0 0 10px #ff4d4d;
+        }
+
+        input[type="text"], input[type="date"] {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 8px 12px;
+            color: white;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        input[type="number"] {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 8px 12px;
+            color: white;
+            border-radius: 5px;
+            outline: none;
+            width: 80px;
+        }
+
+        input[type="submit"] {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="submit"]:hover, .top-btn:hover {
+            background-color: #e60000;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #ff4d4d;
+        }
+
+        p {
+            line-height: 1.6; 
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3, h4, h5 {
+            color: #ff4d4d; 
+            margin-top: 30px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            accent-color: #ff4d4d; 
+            cursor: pointer;
+            transform: scale(1.2); 
+            margin-left: 8px;
+            margin-right: 4px;
+        }
+
+        label {
+            cursor: pointer;
+            margin-right: 15px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        /* زر الصعود للأعلى (Back to Top) في المنتصف */
+        .top-btn {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%); 
+            background-color: #ff4d4d;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px; 
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: 0.3s ease;
+            z-index: 99;
+        }
+
+        .top-btn:hover {
+            background-color: white;
+            color: #ff4d4d;
+            transform: translateX(-50%) scale(1.1); 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- فيديو الخلفية الثابت -->
+    <video autoplay muted loop class="bg-video">
+        <source src="hearts.mp4" type="video/mp4">
+        متصفحك لا يدعم عرض الفيديو.
+    </video>
+
+    <!-- صندوق المحتوى الزجاجي (كل الموقع جواته) -->
+    <div class="content">
+        
+        <center>
+            <h1 class="c">HASHEM MOHAMMED JADALLAH</h1>
+        </center>
+       
+        <center>
+            <img src="hashem.jpeg" alt="Your Image" height="300" width="400">
+        </center>
+        
+        <center>
+            <h2 class="b">Software Engineer</h2>
+            <p class="b">مرحبا طبعا كلكم بتسالو ليش عملت ويبسايت وحاط فيو صورتك طبعا ما عندي سبب مقنع غير اني كسول وبحب اختصر فهاد ويبسايت بعرض فيه مهراتي وممتلكاتي وانجازاتي عشان اختصر مرحله التعارف وعشان ما اتوقع بتعرفو حد عمل ويبسايت لنفسو فهاد تميز اخد مني وقت كبير جداً.</p>
+        </center>
+
+        <p>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name">
+        </p>
+        
+        <label for="age">Your Age:</label>
+        <input type="number" id="age" name="age">
+        
+        <p>Gender:</p>
+        <label>
+            <input type="radio" name="gender" value="male"> Male
+        </label>
+        <label>
+            <input type="radio" name="gender" value="female"> Female
+        </label>
+        
+        <p>Ur Birthday:</p>
+        <input type="date">
+        
+        <p>Ur Goal:</p>
+        <label>
+            <input type="checkbox" name="goal" value="friendship"> Friendship
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="goal" value="relationship"> Relationship
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="goal" value="marriage"> Marriage
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="goal" value="other"> Other
+        </label>
+
+        <h2>Prepare yourselves, here is a mandatory briefing about my legendary personality:</h2>
+        <p>
+            Palestinian-Iraqi mix living in Kuwait and studying in Jordan. My life is basically a "multi-airline loyalty program."
+        </p>
+        <img src="13.jpeg" alt="dne" height="400" width="300">
+        <p>
+            Standing at 180cm and 70kg with size 42 feet, just in case you were planning to buy me clothes or kidnap me.
+        </p>
+        <img src="body.jpeg" alt="dne" height="500" width="300">
+        <p>
+            Mastered the art of panicking for 4 days straight and finishing a massive project 2 hours before the deadline.
+        </p>
+        <p>
+            Athletic powerhouse: I play football, volleyball, tennis, billiards, and drift cars (Formula 1, call me anytime). If you have any of these activities—or a PlayStation controller—just hit me up.
+        </p>
+        <video src="v.mp4" controls height="300" width="400"></video>
+        <p>
+            21 years old, born in 28th March.
+        </p>
+        <img src="young.jpeg" alt="dne" height="300" width="200">
+
+        <h3>My Accomplishments:</h3>
+        <p>Still alive.</p>
+        <p>Studied three different majors at three different universities and successfully completed absolutely zero of them.</p>
+        <img src="class.jpeg" alt="dne" height="300" width="200">
+        <p>My score is 6-2.</p>
+        <p>Won almost every single sports competition I ever entered.</p>
+        <img src="skils.jpeg" alt="dne" height="300" width="250">
+        <p>180 km/h in my car, because traffic laws are more like friendly suggestions.</p>
+        <img src="car1.png" alt="dne" height="350" width="300">
+        <p>Have never been arrested, yet.</p>
+        <p>687 goals and 126 assists so far.</p>
+        <img src="goals.png" alt="dne" height="300" width="200">
+
+        <h4>What I'm Good At:</h4>
+        <p>Elite music listener.</p>
+        <p>Culinary genius capable of turning basic ingredients into absolute masterpieces.</p>
+        <p>Natural-born athlete who dominates every sport the second I step onto the field.</p>
+        <video src="bolling.mp4" controls height="200" width="300"></video>
+        <p>Master of supreme resource management, expert at allocating time and funds to life's highest-value assets.</p>
+        <p>Driving virtuoso owning the open road, where parallel parking is simply beneath my caliber.</p>
+        <p>Connoisseur of sophisticated dark humor.</p>
+        <p>Flawless decision-making apparatus that consistently selects the absolute correct path on the first try.</p>
+
+        <h5>What I Own (Before Taxes):</h5>
+        <p>I cruise around in a BMW, because my car needs to match my fabulous personality and immaculate vibes.</p>
+        <img src="main car.jpeg" alt="dne" height="350" width="250">
+        <p>Rocking a PlayStation 5, turning every gaming session into an absolute masterclass of entertainment and fun.</p>
+        <p>Basically a phone.</p>
+        <p>Living the independent dream in my own apartment, hosting the coolest solo party 24/7.</p>
+        <p>Good body.</p>
+        <img src="goodbody.jpeg" alt="dne" height="500" width="300">
+        <p>Tanning line.</p>
+        <img src="tannig.jpeg" alt="dne" height="200" width="200">
+        <p>Blessed with a legendary barber, because a masterpiece of a hairstyle like mine deserves royal treatment.</p>
+        <p>My wardrobe is a curated collection of the finest fashion, because my style is as legendary as my personality.</p>
+
+        <p>For more details contact with the support.....</p>
+        <a href="https://www.instagram.com/hashem.465/?utm_source=ig_web_button_share_sheet" target="_blank">My Instagram</a>
+        <br>
+        <a href="https://www.snapchat.com/add/hashem.4655?share_id=WJqROWciSkaBdfovexIlaw&locale=en_JO" target="_blank">For Streak</a>
+        <br>
+        <a href="https://www.tiktok.com/@hashem.465?_r=1&_t=ZS-98oQU7dcXe0" target="_blank">My TikTok</a>
+        <br><br>
+        <img src="mea.jpeg" alt="dne" height="350" width="200">
+        <p>Rate pls:</p>
+        <input type="number" id="rating" name="rating" min="1" max="10">
+        <input type="submit" value="Submit">
+        
+        <br><br>
+        <!-- زر الصعود للأعلى -->
+        <a href="#" class="top-btn">↑ Top</a>
+        
+    </div> <!-- نهاية صندوق المحتوى الزجاجي -->
+
+</body>
+</html>
