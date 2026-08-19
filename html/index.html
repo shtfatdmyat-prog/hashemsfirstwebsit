@@ -1,329 +1,332 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-    <body >
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hashem's Portfolio</title>
 
-    
-      <style>
-       .bg-video {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            z-index: -1; /* عشان يضل ورا الكلام وما يغطيش عليه */
-            object-fit: cover; /* عشان الفيديو يغطي الشاشة بدون تشويه */
+    <style>
+        * {
+            box-sizing: border-box;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            /* بما أن الخلفية أحمر وأسود، بنخلي لون الخط أبيض أو رمادي فاتح عشان يوضح */
-            color: white; 
             margin: 0;
-            padding: 50px;
+            padding: 30px 15px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
+            background-color: #050505;
         }
 
-       .content {
-    /* استبدل الـ background-color القديمة بهاي */
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-        
-             </style>
-<video autoplay muted loop class="bg-video">
-        <source src="hearts.mp4" type="video/mp4">
-        متصفحك لا يدعم عرض الفيديو.
-    </video>
-    <style>
+        /* فيديو الخلفية الثابت */
+        .bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -999;
+        }
+
+        /* صندوق المحتوى الرئيسي (أرتب وأوسع شوية) */
+        .content {
+            position: relative;
+            z-index: 1;
+            background: rgba(12, 12, 12, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 750px;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
+        }
+
+        /* تنسيق العنوان والبروفايل */
+        .profile-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-header h1 {
+            font-size: 28px;
+            color: #ff4d4d;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .profile-header h2 {
+            font-size: 18px;
+            color: #cccccc;
+            font-weight: normal;
+        }
+
+        /* تنسيق الصور والفيديوهات داخل الويبسايت */
+        img, video:not(.bg-video) {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.02);
+        }
+
+        /* الأقسام والنصوص بتباعد مريح */
+        h2, h3, h4, h5 {
+            color: #ff4d4d;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 77, 77, 0.3);
+            padding-bottom: 8px;
+        }
+
+        p {
+            line-height: 1.8;
+            color: #dddddd;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        /* الروابط وأزرار السوشيال ميديا */
         a {
-    color: #ff4d4d;
-    text-decoration: none;
-    transition: 0.3s;
-}
-a:hover {
-    color: white;
-    text-decoration: underline;
-    font-size: 1.1em;
+            color: #ff4d4d;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-}
-img {
-    border-radius: 8px; /* بعطي زوايا ناعمة ومرتبة للصور */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-img:hover {
-    transform: scale(1.03); /* بتكبر الصورة نسبة بسيطة */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* ضل خفيف تحت الصورة */
-
-}
-input[type="text"], input[type="number"], input[type="date"] {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 8px 12px;
-    color: white;
-    border-radius: 5px;
-    outline: none;
-}
-
-input[type="submit"] {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-input[type="submit"]:hover {
-    background-color: #e60000;
-    transform: scale(1.05);
-}
-p {
-    line-height: 1.6; /* بتبعد السطور عن بعضها شوي عشان تريح العين بالقراءة */
-    margin-bottom: 20px;
-}
-
-h2, h3, h4, h5 {
-    color: #ff4d4d; /* تمييز عناوين الأقسام بلون أحمر جذاب متناسق مع الفيديو */
-    margin-top: 30px;
-}
-input[type="number"] {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 8px 12px;
+        a:hover {
             color: white;
-            border-radius: 5px;
+            text-shadow: 0 0 10px #ff4d4d;
+        }
+
+        /* تنسيق حقول الإدخال والأشكال */
+        .form-group {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            margin-top: 30px;
+        }
+
+        input[type="text"], input[type="date"], input[type="number"] {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 15px;
+            color: white;
+            border-radius: 8px;
             outline: none;
-            width: 80px; /* عشان ما يكون عريض زيادة عن اللزوم */
+            width: 100%;
+            max-width: 300px;
+            margin-top: 5px;
+            margin-bottom: 15px;
         }
 
-        /* 2. تنسيق أزرار الـ Radio والـ Checkbox بلون أحمر متناسق */
+        input[type="number"] {
+            max-width: 100px;
+        }
+
+        input[type="submit"] {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            display: block;
+            margin-top: 15px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #e60000;
+            transform: scale(1.03);
+            box-shadow: 0 0 15px #ff4d4d;
+        }
+
         input[type="radio"], input[type="checkbox"] {
-            accent-color: #ff4d4d; /* بلون الخط والأزرار الأحمر */
+            accent-color: #ff4d4d;
             cursor: pointer;
-            transform: scale(1.2); /* تكبيره شوي عشان يصير واضح وسهل الضغط عليه */
-            margin-left: 8px;
-            margin-right: 4px;
+            transform: scale(1.1);
+            margin-left: 5px;
+            margin-right: 8px;
         }
 
-        /* تنسيق النصوص اللي جنب الـ Radio والـ Checkbox عشان تتباعد صح */
         label {
             cursor: pointer;
-            margin-left: 10px;
-            margin-right: 15px;
             display: inline-block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            margin-right: 15px;
         }
 
-        /* 2. تنسيق عام للخيارات لتبعد عن بعضها وترتاح للعين */
-        label {
-            cursor: pointer;
-            margin-right: 15px;
-            display: inline-block;
-            margin-bottom: 8px;
-        }
-
-        /* 3. زر الصعود للأعلى (Back to Top) */
+        /* زر الصعود للأعلى الأنيق */
         .top-btn {
             position: fixed;
             bottom: 25px;
             left: 50%;
-            transform: translateX(-50%); /* عشان يجي بالمنتصف تماماً بشكل دقيق */
+            transform: translateX(-50%);
             background-color: #ff4d4d;
             color: white;
             padding: 10px 25px;
-            border-radius: 30px; /* بيخليه شكله زي الزر المستطيل الناعم والأنيق */
+            border-radius: 30px;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
             transition: 0.3s ease;
-            z-index: 99;
+            z-index: 999;
         }
 
         .top-btn:hover {
             background-color: white;
             color: #ff4d4d;
-            transform: translateX(-50%) scale(1.1); /* تكبير ناعم مع الحفاظ على التمركز */
+            box-shadow: 0 0 15px #ff4d4d;
         }
-        h1, h2, h3, h4, h5 {
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-}
-input[type="submit"]:hover, .top-btn:hover {
-    box-shadow: 0 0 15px #ff4d4d;
-}
     </style>
-   
+</head>
+<body>
+
+    <!-- فيديو الخلفية -->
+    <video autoplay muted loop class="bg-video">
+        <source src="hearts.mp4" type="video/mp4">
+    </video>
+
+    <!-- صندوق المحتوى المنسق -->
+    <div class="content">
         
-  <div class="content" >
-    <center>
-<h1 class="c">  HASHEM MOHAMMED JADALLAH </h1>
-    </center>
-   
-    <center>
-        <img src=" hashem.jpeg" alt="Your Image" height="300" width="400">
-    </center>
-    <center>
-        <h2 class="b">Software Engineer</h2>
-     <p class="b" >مرحبا طبعا كلكم بتسالو ليش عملت ويبسايت وحاط فيو صورتك طبعا ما عندي سبب مقنع غير اني كسول وبحب اختصر فهاد ويبسايت بعرض فيه مهراتي وممتلكاتي وانجازاتي عشان اختصر مرحله التعارف وعشان ما اتوقع بتعرفو حد عمل ويبسايت لفسو فهاد تميز اخد مني وقت كبير جد.ء </p>
-    </center>
-    <style>
-    p.dotted {border-style: dotted;}
-    </style>
-     <p>
-     <label for="name" >Your Name:</label>
-     <input type="text" id="name" name="name">
-     </p>
-    <label for ="age" > Your Age:</label>
-    <input type="number" id="age" name="age">
-    <p>gender: </p>
-     <label>
-      <input type="radio" name="gender" name="gender" value="male"> Male
-    </label>
-     <label>
-      <input type="radio" name="gender" name="gender" value="female"> Female
-    </labl>
-    <p>
-        ur birthday:
-    </p>
-   
-    <input type="date">
-    
-    </p>ur goal:</p>
-    <label>
-        <input type="checkbox" name="goal" value = "friendship"> Friendship
-    </label>
-    <br>
-     <label>
-        <input type="checkbox" name="goal" value = "relationship"> Relationship
-    </label>
-    <br>
-     <label>
-        <input type="checkbox" name="goal" value = "marriage"> Marriage
-    </label>
-    <br>
-     <label>
-        <input type="checkbox" name="goal" value = "other"> Other
-    </label>
-    <h2>Prepare yourselves, here is a mandatory briefing about my legendary personality:</h2>
-    <p>
-        Palestinian-Iraqi mix living in Kuwait and studying in Jordan. My life is basically a" multi-airline loyalty program."
-    </p>
-    <img src="13.jpeg" alt="dne" height="400" width="300">
-    <p>
-       Standing at 180cm and 70kg with size 42 feet, just in case you were planning to buy me clothes or kidnap me."
-    </p>
-    <img src="body.jpeg" alt="dne" height="500" width="300">
-    <p>
-        Mastered the art of panicking for 4 days straight and finishing a massive project 2 hours before the deadline."
-    </p>
-    <p>
-       "Athletic powerhouse: I play football, volleyball, tennis, billiards, and drift cars (Formula 1, call me anytime). If you have any of these activities—or a PlayStation controller—just hit me up. 
-    </p>
-    <video src="v.mp4" controls height="300" width="400"> </video>
-    <p>
-        21 years old, born in 28th march .
-    </p>
-    <img src="young.jpeg" alt="dne" height="300" width="200">
+        <div class="profile-header">
+            <h1>HASHEM MOHAMMED JADALLAH</h1>
+            <h2>Software Engineer</h2>
+        </div>
+       
+        <center>
+            <img src="hashem.jpeg" alt="Your Image" height="280" width="350">
+        </center>
+        
+        <p>مرحبا طبعا كلكم بتسالو ليش عملت ويبسايت وحاط فيو صورتك طبعا ما عندي سبب مقنع غير اني كسول وبحب اختصر فهاد ويبسايت بعرض فيه مهراتي وممتلكاتي وانجازاتي عشان اختصر مرحله التعارف وعشان ما اتوقع بتعرفو حد عمل ويبسايت لنفسو فهاد تميز اخد مني وقت كبير جداً.</p>
 
-    <h3>My Accomplishments:</h3>
-    <p>
-        Still alive .
-    </p>
-    <p>
-        Studied three different majors at three different universities and successfully completed absolutely zero of them.
-    </p>
-    <img src="class.jpeg" alt="dne" height="300" width="200">
-    <p>
-        My score is 6-2.
-    </p>
-    <p>
-        Won almost every single sports competition I ever entered.
-    </p>
-    <img src="skils.jpeg" alt="dne" height="300" width="250">
-    <p>
-        180 km/h in my car, because traffic laws are more like friendly suggestions.
-    </p>
-    <img src="car1.png" alt="dne" height="350" width="300">
-    <p>
-        Have never been arrested,yet.
-    </p>
-    <p>
-        687 goals and 126 assists so far.
-    </p>
-    <img src="goals.png" alt="dne" height="300" width="200">
-    <h4>What I'm Good At:</h4>
-    <p>
-        Elite music listener.
-    </p>
-    <p>
-        Culinary genius capable of turning basic ingredients into absolute masterpieces.
-    </p>
-    <p>
-        Natural-born athlete who dominates every sport the second I step onto the field.
-    </p>
-    <video src="bolling.mp4" controls height="200" width="300"> </video>
-    <p> 
-        Master of supreme resource management, expert at allocating time and funds to life's highest-value assets.
-    </p>
-    <p>
-        Driving virtuoso owning the open road, where parallel parking is simply beneath my caliber.
-    </p>
-    <p>
-        Connoisseur of sophisticated dark humor.
-    </p>
-    <p>
-        Flawless decision-making apparatus that consistently selects the absolute correct path on the first try.
-    </p>
-    <h5>What I Own (Before Taxes):</h5> 
-    <p>
-        I cruise around in a BMW, because my car needs to match my fabulous personality and immaculate vibes.
-    </p>
-    <img src="main car.jpeg" alt="dne" height="350" width="250">
-    <p>
-        Rocking a PlayStation 5, turning every gaming session into an absolute masterclass of entertainment and fun.
-    </p>
-    <p>
-       basically a phone.
-    </p>
-    <p>
-        Living the independent dream in my own apartment, hosting the coolest solo party 24/7.
-    </p>
-    <p>
-        good body.
-    </p>
-    <img src="goodbody.jpeg" alt="dne" height="500" width="300">
-    <p>tanning line.</p>
-    <img src="tannig.jpeg" alt="dne" hight="200" width="200">
-    <p>
-        Blessed with a legendary barber, because a masterpiece of a hairstyle like mine deserves royal treatment.
-    </p>
-    <p>
-        My wardrobe is a curated collection of the finest fashion, because my style is as legendary as my personality.
-    </p>
-    <p> for more details contact with the support.....</p>
-    <a href="https://www.instagram.com/hashem.465/?utm_source=ig_web_button_share_sheet" target="_blank">My Instagram</a>
-    <br>
-    <a href="https://www.snapchat.com/add/hashem.4655?share_id=WJqROWciSkaBdfovexIlaw&locale=en_JO" target="_blank">for streak</a>
-    <br>
-    <a href="https://www.tiktok.com/@hashem.465?_r=1&_t=ZS-98oQU7dcXe0" target="_blank">My TikTok</a>
-</br>
-     <img src="mea.jpeg" alt="dne" height="350" width="200">
-    <p>
-        rate plss.
-    </p>
-    <input type="number" id="rating" name="rating" min="1" max="10">
-    <input type="submit" value="Submit">
-    <p></p>
-<p></p>
-    <a href="#" class="top-btn">↑</a>
+        <div class="form-group">
+            <p>
+                <label for="name">Your Name:</label><br>
+                <input type="text" id="name" name="name">
+            </p>
+            
+            <label for="age">Your Age:</label><br>
+            <input type="number" id="age" name="age">
+            
+            <p>Gender:</p>
+            <label>
+                <input type="radio" name="gender" value="male"> Male
+            </label>
+            <label>
+                <input type="radio" name="gender" value="female"> Female
+            </label>
+            
+            <p>Ur Birthday:</p>
+            <input type="date">
+            
+            <p>Ur Goal:</p>
+            <label>
+                <input type="checkbox" name="goal" value="friendship"> Friendship
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="goal" value="relationship"> Relationship
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="goal" value="marriage"> Marriage
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" name="goal" value="other"> Other
+            </label>
+        </div>
 
+        <h2>Prepare yourselves, here is a mandatory briefing about my legendary personality:</h2>
+        <p>Palestinian-Iraqi mix living in Kuwait and studying in Jordan. My life is basically a "multi-airline loyalty program."</p>
+        <img src="13.jpeg" alt="dne" height="350" width="280">
+        
+        <p>Standing at 180cm and 70kg with size 42 feet, just in case you were planning to buy me clothes or kidnap me.</p>
+        <img src="body.jpeg" alt="dne" height="450" width="280">
+        
+        <p>Mastered the art of panicking for 4 days straight and finishing a massive project 2 hours before the deadline.</p>
+        
+        <p>Athletic powerhouse: I play football, volleyball, tennis, billiards, and drift cars (Formula 1, call me anytime). If you have any of these activities—or a PlayStation controller—just hit me up.</p>
+        <video src="v.mp4" controls height="280" width="380"></video>
+        
+        <p>21 years old, born in 28th March.</p>
+        <img src="young.jpeg" alt="dne" height="280" width="200">
+
+        <h3>My Accomplishments:</h3>
+        <p>Still alive.</p>
+        <p>Studied three different majors at three different universities and successfully completed absolutely zero of them.</p>
+        <img src="class.jpeg" alt="dne" height="280" width="200">
+        
+        <p>My score is 6-2.</p>
+        <p>Won almost every single sports competition I ever entered.</p>
+        <img src="skils.jpeg" alt="dne" height="280" width="230">
+        
+        <p>180 km/h in my car, because traffic laws are more like friendly suggestions.</p>
+        <img src="car1.png" alt="dne" height="320" width="250">
+        
+        <p>Have never been arrested, yet.</p>
+        <p>687 goals and 126 assists so far.</p>
+        <img src="goals.png" alt="dne" height="280" width="200">
+
+        <h4>What I'm Good At:</h4>
+        <p>Elite music listener.</p>
+        <p>Culinary genius capable of turning basic ingredients into absolute masterpieces.</p>
+        <p>Natural-born athlete who dominates every sport the second I step onto the field.</p>
+        <video src="bolling.mp4" controls height="200" width="300"></video>
+        
+        <p>Master of supreme resource management, expert at allocating time and funds to life's highest-value assets.</p>
+        <p>Driving virtuoso owning the open road, where parallel parking is simply beneath my caliber.</p>
+        <p>Connoisseur of sophisticated dark humor.</p>
+        <p>Flawless decision-making apparatus that consistently selects the absolute correct path on the first try.</p>
+
+        <h5>What I Own (Before Taxes):</h5>
+        <p>I cruise around in a BMW, because my car needs to match my fabulous personality and immaculate vibes.</p>
+        <img src="main car.jpeg" alt="dne" height="320" width="250">
+        
+        <p>Rocking a PlayStation 5, turning every gaming session into an absolute masterclass of entertainment and fun.</p>
+        <p>Basically a phone.</p>
+        <p>Living the independent dream in my own apartment, hosting the coolest solo party 24/7.</p>
+        <p>Good body.</p>
+        <img src="goodbody.jpeg" alt="dne" height="450" width="280">
+        
+        <p>Tanning line.</p>
+        <img src="tannig.jpeg" alt="dne" height="180" width="180">
+        
+        <p>Blessed with a legendary barber, because a masterpiece of a hairstyle like mine deserves royal treatment.</p>
+        <p>My wardrobe is a curated collection of the finest fashion, because my style is as legendary as my personality.</p>
+
+        <div class="form-group">
+            <p>For more details contact with the support.....</p>
+            <a href="https://www.instagram.com/hashem.465/?utm_source=ig_web_button_share_sheet" target="_blank">My Instagram</a><br>
+            <a href="https://www.snapchat.com/add/hashem.4655?share_id=WJqROWciSkaBdfovexIlaw&locale=en_JO" target="_blank">For Streak</a><br>
+            <a href="https://www.tiktok.com/@hashem.465?_r=1&_t=ZS-98oQU7dcXe0" target="_blank">My TikTok</a>
+            <br><br>
+            
+            <img src="mea.jpeg" alt="dne" height="320" width="200">
+            
+            <p>Rate pls:</p>
+            <input type="number" id="rating" name="rating" min="1" max="10">
+            <input type="submit" value="Submit">
+        </div>
+        
+        <!-- زر الصعود للأعلى -->
+        <a href="#" class="top-btn">↑ Top</a>
+        
     </div>
+
 </body>
 </html>
